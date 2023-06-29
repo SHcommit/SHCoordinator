@@ -21,7 +21,7 @@ extension FlowCoordinator {
   ///   $0.start()
   /// }
   /// ```
-  func set(apply: @escaping (Self) -> Void) {
+  public func set(apply: @escaping (Self) -> Void) {
     apply(self)
   }
 }
@@ -34,7 +34,7 @@ extension FlowCoordinator {
   /// Then, start child coordinator : ]
   ///
   /// - Param with coordinator : parent's child coordinator
-  func addChild<Coordinator>(with childCoordinator: Coordinator) where Coordinator: FlowCoordinator {
+  public func addChild<Coordinator>(with childCoordinator: Coordinator) where Coordinator: FlowCoordinator {
     childCoordinator.set { [weak self] in
       self?.child.append($0)
       $0.parent = self
@@ -50,7 +50,7 @@ extension FlowCoordinator {
   /// Notes:
   ///  1. When a particular ViewController is viewWillDisappeared, it must use this method to remove itself from the child array owned by its parent.
   ///  Otherwise, the object that handles the child coordinator of the parent coordinator continues to hold unnecessary coordinator instances. If so, a memory leak occurs.
-  func removeSelf(from parent: FlowCoordinator) {
+  public func removeSelf(from parent: FlowCoordinator) {
     guard let idx = parent.child.firstIndex(where: {$0===self}) else {
       print("DEBUG: Delete target \(self) is not available in child coordinators")
       return
@@ -59,7 +59,7 @@ extension FlowCoordinator {
     parent.child.remove(at: idx)
   }
   
-  func removeAllChild() {
+  public func removeAllChild() {
     child.removeAll()
   }
 }
@@ -79,7 +79,7 @@ extension FlowCoordinator {
   ///    // my coordinator type is some coordinator
   ///  }
   /// ```
-  func isCoordinator<T: FlowCoordinator>(
+  public func isCoordinator<T: FlowCoordinator>(
     ofType type: T.Type
   )-> Bool {
     return self is T

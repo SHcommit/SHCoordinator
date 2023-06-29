@@ -8,7 +8,7 @@
 #if os(iOS)
 import UIKit
 
-protocol FlowCoordinator: AnyObject {
+public protocol FlowCoordinator: AnyObject {
   // MARK: - Properties
   var parent: FlowCoordinator! { get set }
   var child: [FlowCoordinator] { get set }
@@ -41,7 +41,7 @@ extension FlowCoordinator {
   ///   }
   /// }
   /// ```
-  func finish() {
+  public func finish() {
     guard let parent = parent else {
       print("DEBUG: current coordinator is root coordinator")
       return

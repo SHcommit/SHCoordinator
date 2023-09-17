@@ -12,7 +12,7 @@ import UIKit
 extension FlowCoordinator {
   /// Child coordinator convenience init + setting!!
   ///
-  /// # Example #
+  /// Example:
   /// ```
   /// MainCoordinator(apiClient: apiClient).set {
   ///   $0.partentCoordinator = self
@@ -48,7 +48,7 @@ extension FlowCoordinator {
   /// - Param from parent : The parent coordinator of the child coordinator to be deleted
   ///
   /// Notes:
-  ///  1. When a particular ViewController is viewWillDisappeared, it must use this method to remove itself from the child array owned by its parent.
+  ///  1. When a particular ViewController is deinit, it must use this method to remove itself from the child array owned by its parent.
   ///  Otherwise, the object that handles the child coordinator of the parent coordinator continues to hold unnecessary coordinator instances. If so, a memory leak occurs.
   public func removeSelf(from parent: FlowCoordinator) {
     guard let idx = parent.child.firstIndex(where: {$0===self}) else {

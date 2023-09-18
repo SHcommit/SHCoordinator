@@ -8,19 +8,16 @@
 #if os(iOS)
 import UIKit
 
-@objc public protocol FlowCoordinator: AnyObject {
+public protocol FlowCoordinator: AnyObject {
   // MARK: - Properties
   var parent: FlowCoordinator! { get set }
   var child: [FlowCoordinator] { get set }
-  var presenter: UINavigationController { get }
-  @objc optional weak var viewController: UIViewController? { get set }
+  var presenter: UINavigationController! { get }
   
-  // MARK: - Helpers
   func start()
 }
 
 extension FlowCoordinator {
-  
   /// If a ChildCoordinator needs to be deallocated when a viewController is about to disappear,
   /// it is important to call the **finish** method on the weakly held coordinator in the deinit of the viewController to prevent memory leaks.
   ///

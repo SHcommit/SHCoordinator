@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		151107C92A4D45F700D71F39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151107C82A4D45F700D71F39 /* AppDelegate.swift */; };
 		151107CB2A4D45F700D71F39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151107CA2A4D45F700D71F39 /* SceneDelegate.swift */; };
-		151107CD2A4D45F700D71F39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151107CC2A4D45F700D71F39 /* ViewController.swift */; };
 		151107D22A4D45F800D71F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151107D12A4D45F800D71F39 /* Assets.xcassets */; };
 		151107D52A4D45F800D71F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151107D32A4D45F800D71F39 /* LaunchScreen.storyboard */; };
+		15DF8CBB2AB7E2D500446CC7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8CBA2AB7E2D500446CC7 /* MainCoordinator.swift */; };
+		15DF8CBD2AB7E4AF00446CC7 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8CBC2AB7E4AF00446CC7 /* ApplicationCoordinator.swift */; };
+		15DF8CC12AB7E68300446CC7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8CC02AB7E68300446CC7 /* MainViewController.swift */; };
+		15DF8CC32AB7F5C000446CC7 /* SubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8CC22AB7F5C000446CC7 /* SubCoordinator.swift */; };
+		15DF8CC72AB8236300446CC7 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8CC62AB8236300446CC7 /* SubViewController.swift */; };
 		28940FE6BEC65FAF91F3D759 /* Pods_SHCoordinatorExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D17EFCC1F5FBB9B4263673A /* Pods_SHCoordinatorExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,10 +23,14 @@
 		151107C52A4D45F700D71F39 /* SHCoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHCoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		151107C82A4D45F700D71F39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		151107CA2A4D45F700D71F39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		151107CC2A4D45F700D71F39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		151107D12A4D45F800D71F39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		151107D42A4D45F800D71F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		151107D62A4D45F800D71F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15DF8CBA2AB7E2D500446CC7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		15DF8CBC2AB7E4AF00446CC7 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		15DF8CC02AB7E68300446CC7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		15DF8CC22AB7F5C000446CC7 /* SubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCoordinator.swift; sourceTree = "<group>"; };
+		15DF8CC62AB8236300446CC7 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		2D17EFCC1F5FBB9B4263673A /* Pods_SHCoordinatorExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHCoordinatorExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8BABE46F3DF099C3C23141 /* Pods-SHCoordinatorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCoordinatorExample.debug.xcconfig"; path = "Target Support Files/Pods-SHCoordinatorExample/Pods-SHCoordinatorExample.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBEC13DAC25E64CD7D4AF62 /* Pods-SHCoordinatorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCoordinatorExample.release.xcconfig"; path = "Target Support Files/Pods-SHCoordinatorExample/Pods-SHCoordinatorExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +90,11 @@
 		151107DD2A4D46A000D71F39 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				151107CC2A4D45F700D71F39 /* ViewController.swift */,
+				15DF8CBA2AB7E2D500446CC7 /* MainCoordinator.swift */,
+				15DF8CBC2AB7E4AF00446CC7 /* ApplicationCoordinator.swift */,
+				15DF8CC02AB7E68300446CC7 /* MainViewController.swift */,
+				15DF8CC22AB7F5C000446CC7 /* SubCoordinator.swift */,
+				15DF8CC62AB8236300446CC7 /* SubViewController.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -101,7 +113,6 @@
 				BF8BABE46F3DF099C3C23141 /* Pods-SHCoordinatorExample.debug.xcconfig */,
 				CDBEC13DAC25E64CD7D4AF62 /* Pods-SHCoordinatorExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,9 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151107CD2A4D45F700D71F39 /* ViewController.swift in Sources */,
+				15DF8CBD2AB7E4AF00446CC7 /* ApplicationCoordinator.swift in Sources */,
 				151107C92A4D45F700D71F39 /* AppDelegate.swift in Sources */,
+				15DF8CC72AB8236300446CC7 /* SubViewController.swift in Sources */,
+				15DF8CBB2AB7E2D500446CC7 /* MainCoordinator.swift in Sources */,
+				15DF8CC12AB7E68300446CC7 /* MainViewController.swift in Sources */,
 				151107CB2A4D45F700D71F39 /* SceneDelegate.swift in Sources */,
+				15DF8CC32AB7F5C000446CC7 /* SubCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

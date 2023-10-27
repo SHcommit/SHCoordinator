@@ -21,24 +21,19 @@ final class SubCoordinator: NSObject, FlowCoordinator {
   init(presenter: UINavigationController?) {
     super.init()
     self.presenter = presenter
-    
-    /// 네비게이션 컨트롤러에서 pop되는 뷰 컨트롤러 타입이 sub coordinator에서 관리하는 SubViewController.self가 맞는지 type전달합니다.
-    isTargetViewController = { [weak self] someViewController in
-      return self?.checkViewController(
-        someViewController, 
-        ofType: SubViewController.self) ?? false
-    }
+    let viewController = SubViewController()
+    self.viewController = viewController
+    viewController.coordinator = self
     self.presenter?.delegate = self
   }
   
   func start() {
-    let vc = SubViewController()
-    vc.coordinator = self
-    presenter?.pushViewController(vc, animated: true)
+    guard let viewController else { return }
+    presenter?.pushViewController(viewController, animated: true)
   }
   
   deinit {
-    print("sub deinit")
+    print("\(Self.self) deinit")
   }
 }
 

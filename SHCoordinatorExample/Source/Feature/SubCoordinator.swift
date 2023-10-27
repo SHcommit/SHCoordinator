@@ -16,8 +16,7 @@ final class SubCoordinator: NSObject, FlowCoordinator {
   var parent: FlowCoordinator?
   var child: [FlowCoordinator] = []
   var presenter: UINavigationController?
-  
-  var isTargetViewController: ((UIViewController) -> Bool)?
+  var viewController: UIViewController?
 
   init(presenter: UINavigationController?) {
     super.init()

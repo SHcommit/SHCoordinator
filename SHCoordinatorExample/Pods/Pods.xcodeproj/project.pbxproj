@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15D60D3A2AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */; };
 		632EBE76F54B7E9F5CD7755D783DC79D /* Pods-SHCoordinatorExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8165A725E5B107BB006E3F2F7AA84F /* Pods-SHCoordinatorExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A8898EC2757A77A2AEEA36C44B27197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		706DFB4BAE4F36AC6013FFCFA5FEC0CB /* FlowCoordinator+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9CF42D21DEE2A80C01F6F52DCB9EE /* FlowCoordinator+Utils.swift */; };
@@ -33,6 +34,7 @@
 		0620A90FB4C46DF76ED1E78C7C0951E5 /* SHCoordinator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SHCoordinator.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		12AD092DC7E35CB2131160DEA21E9F23 /* SHCoordinator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHCoordinator-prefix.pch"; sourceTree = "<group>"; };
 		15BC3B5EC4CC6CF20494CA58CCACAA7B /* Pods-SHCoordinatorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SHCoordinatorExample.debug.xcconfig"; sourceTree = "<group>"; };
+		15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		28C45541AAF137203A9D54DF9B8F7ABA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2A5F8DFBF49B30651835BEBB24C8D411 /* FlowCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowCoordinator.swift; path = Sources/SHCoordinator/FlowCoordinator.swift; sourceTree = "<group>"; };
 		301D8E04FC36A5D35F142E955E39EF0C /* SHCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHCoordinator-umbrella.h"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		0B7F5ED83B1DABC4F718F5357CD7858D /* SHCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */,
 				2A5F8DFBF49B30651835BEBB24C8D411 /* FlowCoordinator.swift */,
 				84A9CF42D21DEE2A80C01F6F52DCB9EE /* FlowCoordinator+Utils.swift */,
 				09D43475768F68F48FC785A08CB26651 /* Pod */,
@@ -295,6 +298,7 @@
 				C6596B65D57BFDCB6D970E738D6154B3 /* FlowCoordinator.swift in Sources */,
 				706DFB4BAE4F36AC6013FFCFA5FEC0CB /* FlowCoordinator+Utils.swift in Sources */,
 				C653F7A6B7C74B57A6C1F1478D01F63F /* SHCoordinator-dummy.m in Sources */,
+				15D60D3A2AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

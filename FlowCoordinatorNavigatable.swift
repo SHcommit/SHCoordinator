@@ -5,7 +5,8 @@
 //  Created by 양승현 on 10/27/23.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
 
 /// 코디네이터에서 UINavigationControllerDelegate 관련된 프로토콜입니다.
 ///
@@ -67,3 +68,4 @@ where Self: FlowCoordinatorDelegate,
     }
   }
 }
+#endif

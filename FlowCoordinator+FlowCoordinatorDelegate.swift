@@ -33,7 +33,6 @@ extension FlowCoordinator {
   /// }
   /// ```
   public func finish(withAnimated animated: Bool = true) {
-    isTargetViewController = nil
     finish()
     presenter?.popViewController(animated: animated)
   }
@@ -42,7 +41,6 @@ extension FlowCoordinator {
   /// 예를들어 BaseViewController를 상속한 커스텀뷰인데, 네비바 뒤로가기 버튼에 자동으로 navigationController.popViewController(animated:) 함수를 호출하는 경우
   /// 해당 커스텀 컨트롤러의 뒤로가기 함수를 오버라이드 해서 coordinator.finish()이 함수를 호출해야 합니다.
   public func finish() {
-    isTargetViewController = nil
     guard let parent = parent else {
       print("DEBUG: current coordinator is root coordinator")
       return

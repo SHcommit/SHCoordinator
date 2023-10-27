@@ -92,22 +92,4 @@ extension FlowCoordinator {
     return specificViewController is TargetViewController
   }
 }
-
-// MARK: - Manage from UINavigationControllerDelegate
-public extension FlowCoordinator where Self: UINavigationControllerDelegate {
-  /// 특정 Coordinator에서 자동으로 네비게이션 스택에서 pop될때, 코디네이터가 관리하는 뷰인지 여부에 따라 자동으로 finish를 호출할 수 있는 함수입니다.
-  func handlePopViewController(
-    _ navigationController: UINavigationController,
-    didShow viewController: UIViewController,
-    animated: Bool
-  ) {
-    guard let poppedViewController = navigationController
-      .transitionCoordinator?
-      .viewController(forKey: .from)
-    else { return }
-    if self.viewController === poppedViewController {
-      finish()
-    }
-  }
-}
 #endif

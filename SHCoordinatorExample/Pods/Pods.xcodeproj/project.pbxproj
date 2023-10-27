@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15D60D3A2AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */; };
 		15D60D3C2AEB9CCE0087FEC0 /* FlowCoordinator+FlowCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D60D3B2AEB9CCE0087FEC0 /* FlowCoordinator+FlowCoordinatorDelegate.swift */; };
+		15D60D402AEBF4500087FEC0 /* FlowCoordinatorNavigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D60D3F2AEBF4500087FEC0 /* FlowCoordinatorNavigatable.swift */; };
 		632EBE76F54B7E9F5CD7755D783DC79D /* Pods-SHCoordinatorExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8165A725E5B107BB006E3F2F7AA84F /* Pods-SHCoordinatorExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A8898EC2757A77A2AEEA36C44B27197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		706DFB4BAE4F36AC6013FFCFA5FEC0CB /* FlowCoordinator+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9CF42D21DEE2A80C01F6F52DCB9EE /* FlowCoordinator+Utils.swift */; };
@@ -37,6 +38,7 @@
 		15BC3B5EC4CC6CF20494CA58CCACAA7B /* Pods-SHCoordinatorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SHCoordinatorExample.debug.xcconfig"; sourceTree = "<group>"; };
 		15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		15D60D3B2AEB9CCE0087FEC0 /* FlowCoordinator+FlowCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+FlowCoordinatorDelegate.swift"; sourceTree = "<group>"; };
+		15D60D3F2AEBF4500087FEC0 /* FlowCoordinatorNavigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorNavigatable.swift; sourceTree = "<group>"; };
 		28C45541AAF137203A9D54DF9B8F7ABA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2A5F8DFBF49B30651835BEBB24C8D411 /* FlowCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowCoordinator.swift; path = Sources/SHCoordinator/FlowCoordinator.swift; sourceTree = "<group>"; };
 		301D8E04FC36A5D35F142E955E39EF0C /* SHCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHCoordinator-umbrella.h"; sourceTree = "<group>"; };
@@ -102,12 +104,13 @@
 		0B7F5ED83B1DABC4F718F5357CD7858D /* SHCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				E720EFBC620A7E1CB1D164CC4F4D0E63 /* Support Files */,
+				09D43475768F68F48FC785A08CB26651 /* Pod */,
 				15D60D392AEB8A170087FEC0 /* FlowCoordinatorDelegate.swift */,
+				15D60D3F2AEBF4500087FEC0 /* FlowCoordinatorNavigatable.swift */,
 				2A5F8DFBF49B30651835BEBB24C8D411 /* FlowCoordinator.swift */,
 				15D60D3B2AEB9CCE0087FEC0 /* FlowCoordinator+FlowCoordinatorDelegate.swift */,
 				84A9CF42D21DEE2A80C01F6F52DCB9EE /* FlowCoordinator+Utils.swift */,
-				09D43475768F68F48FC785A08CB26651 /* Pod */,
-				E720EFBC620A7E1CB1D164CC4F4D0E63 /* Support Files */,
 			);
 			name = SHCoordinator;
 			path = ../..;
@@ -186,7 +189,7 @@
 				01C8B2DB7C7E8EC00C7CE89FC7983C89 /* SHCoordinator.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "SHCoordinatorExample/Pods/Target Support Files/SHCoordinator";
+			path = SHCoordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D60D402AEBF4500087FEC0 /* FlowCoordinatorNavigatable.swift in Sources */,
 				C6596B65D57BFDCB6D970E738D6154B3 /* FlowCoordinator.swift in Sources */,
 				706DFB4BAE4F36AC6013FFCFA5FEC0CB /* FlowCoordinator+Utils.swift in Sources */,
 				15D60D3C2AEB9CCE0087FEC0 /* FlowCoordinator+FlowCoordinatorDelegate.swift in Sources */,

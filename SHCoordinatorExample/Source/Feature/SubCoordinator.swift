@@ -8,23 +8,34 @@
 import UIKit
 import SHCoordinator
 
-protocol SubCoordinatorDelegate: AnyObject {
-  func finish()
+protocol SubCoordinatorDelegate: FlowCoordinatorDelegate {
+  
 }
 
-final class SubCoordinator: FlowCoordinator {
-  var parent: FlowCoordinator!
+final class SubCoordinator: NSObject, FlowCoordinator {
+  var parent: FlowCoordinator?
   var child: [FlowCoordinator] = []
-  var presenter: UINavigationController!
+  var presenter: UINavigationController?
   
+  var isTargetViewController: ((UIViewController) -> Bool)?
+
   init(presenter: UINavigationController?) {
+    super.init()
     self.presenter = presenter
+    
+    /// 네비게이션 컨트롤러에서 pop되는 뷰 컨트롤러 타입이 sub coordinator에서 관리하는 SubViewController.self가 맞는지 type전달합니다.
+    isTargetViewController = { [weak self] someViewController in
+      return self?.checkViewController(
+        someViewController, 
+        ofType: SubViewController.self) ?? false
+    }
+    self.presenter?.delegate = self
   }
   
   func start() {
     let vc = SubViewController()
     vc.coordinator = self
-    presenter.pushViewController(vc, animated: true)
+    presenter?.pushViewController(vc, animated: true)
   }
   
   deinit {
@@ -32,28 +43,18 @@ final class SubCoordinator: FlowCoordinator {
   }
 }
 
-extension SubCoordinator: SubCoordinatorDelegate {}
+// MARK: - SubCoordinatorDelegate
+extension SubCoordinator: SubCoordinatorDelegate {
+  
+}
 
-final class SubViewController: UIViewController {
-  weak var coordinator: SubCoordinatorDelegate?
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .yellow
-    setLabel()
-  }
-  
-  deinit {
-    coordinator?.finish()
-  }
-  
-  private func setLabel() {
-    let screenWidth = Int(UIScreen.main.bounds.width)
-    let width = 200
-    let rect = CGRect(x: (screenWidth-width)/2, y: 300, width: width, height: 100)
-    let lb = UILabel(frame: rect)
-    lb.textAlignment = .center
-    lb.text = "Sub View Controller"
-    view.addSubview(lb)
+// MARK: - UINavigationControllerDelegate
+extension SubCoordinator: UINavigationControllerDelegate {
+  func navigationController(
+    _ navigationController: UINavigationController,
+    didShow viewController: UIViewController,
+    animated: Bool
+  ) {
+    handlePopViewController(navigationController, didShow: viewController, animated: animated)
   }
 }

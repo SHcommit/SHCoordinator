@@ -105,11 +105,7 @@ public extension FlowCoordinator where Self: UINavigationControllerDelegate {
       .transitionCoordinator?
       .viewController(forKey: .from)
     else { return }
-    guard
-      let isTargetViewController,
-      isTargetViewController(poppedViewController)
-    else { return }
-    if isTargetViewController(poppedViewController) {
+    if self.viewController === poppedViewController {
       finish()
     }
   }

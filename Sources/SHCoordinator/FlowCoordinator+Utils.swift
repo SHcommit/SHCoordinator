@@ -72,7 +72,7 @@ extension FlowCoordinator {
   /// - Param coordinator : check coordinator's type
   /// - Param ofType : The type <T> or the subtype that we want to check against
   ///
-  /// # Example #
+  /// Example:
   /// ```
   /// let myCoordinator = MyCoordinator()
   ///  if myCoordinator.isCoordinator(ofType: SomeCoordinator.self) {
@@ -81,8 +81,37 @@ extension FlowCoordinator {
   /// ```
   public func isCoordinator<T: FlowCoordinator>(
     ofType type: T.Type
-  )-> Bool {
+  ) -> Bool {
     return self is T
+  }
+  
+  public func checkViewController<TargetViewController: UIViewController>(
+    _ specificViewController: UIViewController,
+    ofType type: TargetViewController.Type
+  ) -> Bool {
+    return specificViewController is TargetViewController
+  }
+}
+
+// MARK: - Manage from UINavigationControllerDelegate
+public extension FlowCoordinator where Self: UINavigationControllerDelegate {
+  /// 특정 Coordinator에서 자동으로 네비게이션 스택에서 pop될때, 코디네이터가 관리하는 뷰인지 여부에 따라 자동으로 finish를 호출할 수 있는 함수입니다.
+  func handlePopViewController(
+    _ navigationController: UINavigationController,
+    didShow viewController: UIViewController,
+    animated: Bool
+  ) {
+    guard let poppedViewController = navigationController
+      .transitionCoordinator?
+      .viewController(forKey: .from)
+    else { return }
+    guard
+      let isTargetViewController,
+      isTargetViewController(poppedViewController)
+    else { return }
+    if isTargetViewController(poppedViewController) {
+      finish()
+    }
   }
 }
 #endif

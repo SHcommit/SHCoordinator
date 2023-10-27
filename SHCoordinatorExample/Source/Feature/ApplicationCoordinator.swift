@@ -9,14 +9,19 @@ import UIKit
 import SHCoordinator
  
 final class ApplicationCoordinator: FlowCoordinator {
-  var parent: FlowCoordinator!
+  // MARK: - Properties
+  var parent: FlowCoordinator?
   var child: [FlowCoordinator] = []
-  var presenter: UINavigationController!
-  weak var viewController: UIViewController?
+  var presenter: UINavigationController?
+  var viewController: UIViewController?
   private let window: UIWindow
   
   init(window: UIWindow) {
     self.window = window
+  }
+  
+  init(presenter: UINavigationController?) {
+    fatalError()
   }
   
   func start() {

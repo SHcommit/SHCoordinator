@@ -8,26 +8,27 @@
 import UIKit
 import SHCoordinator
 
-protocol MainCoordinatorDelegate: AnyObject {
-  func finish()
+protocol MainCoordinatorDelegate: FlowCoordinatorDelegate {
   func gotoSubPage()
 }
 
 final class MainCoordinator: FlowCoordinator {
-  var parent: SHCoordinator.FlowCoordinator!
+  // MARK: - Properties
+  var parent: FlowCoordinator?
   var child: [SHCoordinator.FlowCoordinator] = []
-  var presenter: UINavigationController!
-  var viewController: UIViewController!
+  var presenter: UINavigationController?
+  var viewController: UIViewController?
   
-  init(presenter: UINavigationController!) {
-    let vc = MainViewController()
-    self.presenter = .init(rootViewController: vc)
-    vc.coordinator = self
-    viewController = vc
+  init(presenter: UINavigationController?) {
+    let viewController = MainViewController()
+    self.viewController = viewController
+    self.presenter = .init(rootViewController: viewController)
+    viewController.coordinator = self
   }
   
   func start() {
-    presenter.viewControllers = [viewController]
+    guard let viewController else { return }
+    presenter?.viewControllers = [viewController]
   }
   
   deinit {
@@ -37,7 +38,6 @@ final class MainCoordinator: FlowCoordinator {
 
 extension MainCoordinator: MainCoordinatorDelegate {
   func gotoSubPage() {
-    print(presenter.viewControllers.count)
     let childCoordinator = SubCoordinator(presenter: presenter)
     addChild(with: childCoordinator)
   }

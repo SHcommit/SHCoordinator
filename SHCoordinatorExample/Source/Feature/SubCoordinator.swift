@@ -12,7 +12,7 @@ protocol SubCoordinatorDelegate: FlowCoordinatorDelegate {
   
 }
 
-final class SubCoordinator: NSObject, FlowCoordinator {
+final class SubCoordinator: NSObject, FlowCoordinator, FlowCoordinatorNavigatable {
   var parent: FlowCoordinator?
   var child: [FlowCoordinator] = []
   var presenter: UINavigationController?

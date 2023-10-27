@@ -31,7 +31,7 @@ ___
 ### [Cocoapods]
 1. Please execute the  `pod init` command in the terminal from the root directory where the xcodeproj project file is located.
 2. Then, open the Podfile using `vim Podfile` commend.
-3. Add `'SHCoordinator', '2.0.0' ` dependency inside target 'MyProejct' do ... end block. then save the Podfile using `:wq` commend.
+3. Add `'SHCoordinator', '3.0.1' ` dependency inside target 'MyProejct' do ... end block. then save the Podfile using `:wq` commend.
 4. Enter the commend `pod install` 
 
 Finally, open the proejct.xcodeproj, closed it, and then open proejct.xcworkspace file.
@@ -42,6 +42,7 @@ After that, add `Import SHCoordinator` to your source code.
 |------------|--------------|-------------|-----------------------------------------------|
 | SHCoordinator 1.0.2  | June 29, 2023  | Swift 5.0   | iOS 13.0 |
 | SHCoordinator 2.0.0  | September 18, 2023  | Swift 5.0   | iOS 13.0 |
+| SHCoordinator 3.0.1  | October 28, 2023  | Swift 5.0   | iOS 13.0 |
 
 ## License
 

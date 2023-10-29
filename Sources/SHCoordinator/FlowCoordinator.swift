@@ -13,7 +13,6 @@ public protocol FlowCoordinator: FlowCoordinatorDelegate {
   var parent: FlowCoordinator? { get set }
   var child: [FlowCoordinator] { get set }
   var presenter: UINavigationController? { get }
-  var viewController: UIViewController? { get }
   
   init(presenter: UINavigationController?)
   

@@ -14,8 +14,6 @@ public protocol FlowCoordinator: FlowCoordinatorDelegate {
   var child: [FlowCoordinator] { get set }
   var presenter: UINavigationController? { get }
   
-  init(presenter: UINavigationController?)
-  
   func start()
 }
 #endif

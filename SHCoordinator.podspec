@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SHCoordinator'
-  s.version          = '3.0.3'
+  s.version          = '3.1.3'
   s.summary          = 'It is a flow coordinator library that everyone can use.'
 
   s.homepage         = 'https://github.com/SHcommit/SHCoordinator'

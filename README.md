@@ -43,7 +43,7 @@ After that, add `Import SHCoordinator` to your source code.
 | SHCoordinator 1.0.2  | June 29, 2023  | Swift 5.0   | iOS 13.0 |
 | SHCoordinator 2.0.0  | September 18, 2023  | Swift 5.0   | iOS 13.0 |
 | SHCoordinator 3.0.1  | October 28, 2023  | Swift 5.0   | iOS 13.0 |
-
+| SHCoordinator 3.1.4  | April 9, 2024  | Swift 5.0   | iOS 13.0 |
 ## License
 
 SHCoordinator is available under the MIT license. See the LICENSE file for more info.

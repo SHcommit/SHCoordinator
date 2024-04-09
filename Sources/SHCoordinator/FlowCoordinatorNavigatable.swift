@@ -59,10 +59,19 @@ where Self: FlowCoordinatorDelegate,
     didShow viewController: UIViewController,
     animated: Bool
   ) {
+    if navigationController.viewControllers.contains(where: { $0 === self.viewController }) {
+      return
+    }
+    
+    if self.viewController === viewController {
+      return
+    }
+    
     guard let poppedViewController = navigationController
       .transitionCoordinator?
       .viewController(forKey: .from)
     else { return }
+    
     if self.viewController === poppedViewController {
       finish()
     }
